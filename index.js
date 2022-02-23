@@ -1,4 +1,3 @@
-// import { Router } from 'itty-router'
 import { DateTime } from "luxon"
 import * as dininghall from './location_dining.js'
 import * as cafe from './location_cafe.js'
@@ -13,8 +12,8 @@ addEventListener("fetch", event => {
   event.respondWith(slackWebhookHandler(event.request))
 })
 
+/** EVENT HANDLER **/
 async function slackWebhookHandler(request) {
-
   if (request.method !== "POST") {
     return simpleResponse(
       200,
@@ -95,7 +94,7 @@ async function slackWebhookHandler(request) {
   }
 }
 
-
+// simpleResponse
 function simpleResponse(statusCode, message) {
   let resp = {
     request: message,
