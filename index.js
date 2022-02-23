@@ -1,6 +1,7 @@
 // import { Router } from 'itty-router'
 import { DateTime } from "luxon"
 import * as dininghall from './location_dining.js'
+import * as cafe from './location_cafe.js'
 
 const SLACK_TOKEN = SLACK_TOKEN_AUTH
 const BOT_NAME = "Vandy-Food-Bot"
@@ -48,6 +49,14 @@ async function slackWebhookHandler(request) {
       case 'ZEPPOS':
         return new Response(dininghall.zeppos(now))
       // cafes TO BE IMPLEMENTED
+      case 'ALUMNI':
+        return new Response(cafe.alumni(now))
+      case 'GRINS':
+        return new Response(cafe.grins(now))
+      case 'HOLYSMOKES':
+        return new Response(cafe.holysmokes(now))
+      case 'LOCALJAVA':
+        return new Response(cafe.localjava(now))
     }
 
     return new Response("Not a valid Dining Hall symbol!")

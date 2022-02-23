@@ -79,3 +79,24 @@ export const zeppos_wknd_breakfastlunch_start = { hour: 9, minute: 0 }
 export const zeppos_wknd_breakfastlunch_end = { hour: 14, minute: 0 }
 export const zeppos_wknd_dinner_start = { hour: 16, minute: 30 }
 export const zeppos_wknd_dinner_end = { hour: 19, minute: 30 }
+
+/**********************************/
+/************** CAFES *************/
+/**********************************/
+// ALUMNI CAFE
+// mon - fri breakfast & lunch
+export const alumni_wday_start = { hour: 11, minute: 0 }
+export const alumni_wday_end = { hour: 16, minute: 0 }
+
+// GRINS VEGETARIAN CAFE
+export const grins_wday_normal_start = { hour: 7, minute: 0 }
+export const grins_wday_normal__end = { hour: 18, minute: 30 }
+export const grins_wday_friday_start = { hour: 7, minute: 0 }
+export const grins_wday_friday_end = { hour: 14, minute: 0 }
+
+// HOLY SMOKES
+export const holysmokes_wday_lunch_start = { hour: 12, minute: 0 }
+export const holysmokes_wday_lunch_end = { hour: 13, minute: 30 }
+export const holysmokes_wday_dinner_start = { hour: 17, minute: 0 }
+export const holysmokes_wday_dinner_end = { hour: 19, minute: 30 }
+
