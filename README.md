@@ -1,21 +1,11 @@
-## Router
+## vandy-food-bot
 
-This template demonstrates using the [`itty-router`](https://github.com/kwhitley/itty-router) package to add routing to your Cloudflare Workers.
+This bot allows user to use shell or slash command to find out whether a specific Vanderbilt University dining hall is open right now.
 
-[`index.js`](https://github.com/cloudflare/worker-template-router/blob/master/index.js) is the content of the Workers script.
+This bot is created using Cloudflare Workers, Javascript, and the luxon library by Austin Wang (Vanderbilt Class of 2023).
 
-#### Wrangler
-
-You can use [wrangler](https://github.com/cloudflare/wrangler) to generate a new Cloudflare Workers project based on this template by running the following command from your terminal:
-
+### Example Usage as a Slack slash command
 ```
-wrangler generate myapp https://github.com/cloudflare/worker-template-router
+/food 2301
 ```
-
-Before publishing your code you need to edit `wrangler.toml` file and add your Cloudflare `account_id` - more information about configuring and publishing your code can be found [in the documentation](https://developers.cloudflare.com/workers/learning/getting-started#7-configure-your-project-for-deployment).
-
-Once you are ready, you can publish your code by running the following command:
-
-```
-wrangler publish
-```
+this will give you information on the dining location '2301'
