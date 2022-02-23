@@ -1,6 +1,6 @@
 // import { Router } from 'itty-router'
 import { DateTime } from "luxon"
-import * as bot from './location_dining.js'
+import * as dininghall from './location_dining.js'
 
 const SLACK_TOKEN = SLACK_TOKEN_AUTH
 const BOT_NAME = "Vandy-Food-Bot"
@@ -34,15 +34,20 @@ async function slackWebhookHandler(request) {
     switch (parsed) {
       // dining halls
       case '2301':
-        return new Response(bot._2301(now))
+        return new Response(dininghall._2301(now))
       case 'COMMONS':
-        return new Response(bot.commons(now))
+        return new Response(dininghall.commons(now))
       case 'EBI':
-        return new Response(bot.ebi(now))
+        return new Response(dininghall.ebi(now))
       case 'KISSAM':
-        return new Response(bot.kissam(now))
+        return new Response(dininghall.kissam(now))
       case 'MCTYEIRE':
-        return new Response(bot.mctyeire(now))
+        return new Response(dininghall.mctyeire(now))
+      case 'RAND':
+        return new Response(dininghall.rand(now))
+      case 'ZEPPOS':
+        return new Response(dininghall.zeppos(now))
+      // cafes TO BE IMPLEMENTED
     }
 
     return new Response("Not a valid Dining Hall symbol!")

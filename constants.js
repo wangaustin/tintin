@@ -59,3 +59,23 @@ export const kissam_wknd_dinner_end = { hour: 20, minute: 0 }
 // mon - thur dinner
 export const mctyeire_wday_start = { hour: 17, minute: 45 }
 export const mctyeire_wday_end = { hour: 19, minute: 0 }
+
+// RAND
+// mon - fri breakfast & lunch
+export const rand_wday_start = { hour: 7, minute: 0 }
+export const rand_wday_end = { hour: 15, minute: 0 }
+
+
+// ZEPPOS
+// weekday
+export const zeppos_wday_breakfast_start = { hour: 7, minute: 0 }
+export const zeppos_wday_breakfast_end = { hour: 10, minute: 30 }
+export const zeppos_wday_lunch_start = { hour: 11, minute: 0 }
+export const zeppos_wday_lunch_end = { hour: 14, minute: 30 }
+export const zeppos_wday_dinner_start = { hour: 16, minute: 30 }
+export const zeppos_wday_dinner_end = { hour: 19, minute: 30 }
+// weekend
+export const zeppos_wknd_breakfastlunch_start = { hour: 9, minute: 0 }
+export const zeppos_wknd_breakfastlunch_end = { hour: 14, minute: 0 }
+export const zeppos_wknd_dinner_start = { hour: 16, minute: 30 }
+export const zeppos_wknd_dinner_end = { hour: 19, minute: 30 }
