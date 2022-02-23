@@ -64,7 +64,7 @@ export function _2301(now) {
 
 // COMMONS OPEN?
 export function commons(now) {
-    let dininghall = 'Commons'
+    let dininghall = 'Commons Dining'
     let timezone = CONST.TIMEZONE
     let whatDay = now.weekday
     // breakfast
@@ -208,7 +208,7 @@ export function ebi(now) {
 
 // KISSAM OPEN?
 export function kissam(now) {
-    let dininghall = 'Kissam'
+    let dininghall = 'Kissam Kitchen'
     let timezone = CONST.TIMEZONE
     let whatDay = now.weekday
     // breakfast

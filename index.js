@@ -67,6 +67,20 @@ async function slackWebhookHandler(request) {
       case 'CENTRAL':
         return new Response(cafe.central(now))
       // munchies TO BE IMPLEMENTED
+      case 'BRANSCOMB':
+      case 'SCOMB':
+        return new Response(munchie.branscomb(now))
+      case 'COMMONSM':
+      case 'COMMONSMUNCHIE':
+        return new Response(munchie.mCommons(now))
+      case 'HIGHLAND':
+        return new Response(munchie.highland(now))
+      case 'KISSAMM':
+      case 'KISSAMMUNCHIE':
+        return new Response(munchie.mKissam(now))
+      case 'RANDM':
+      case 'RANDMUNCHIE':
+        return new Response(munchie.mRand(now))
     }
 
     // NOT A VALID INPUT!

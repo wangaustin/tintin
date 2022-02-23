@@ -121,3 +121,39 @@ export const central_wday_normal_start = { hour: 8, minute: 0 }
 export const central_wday_normal__end = { hour: 20, minute: 30 }
 export const central_wday_friday_start = { hour: 8, minute: 0 }
 export const central_wday_friday_end = { hour: 15, minute: 0 }
+
+/**********************************/
+/************* MUNCHIE ************/
+/**********************************/
+
+// BRANSCOMB MUNCHIE
+export const branscomb_wday_start = { hour: 7, minute: 0 }
+export const branscomb_wday__end = { hour: 23, minute: 59 }
+export const branscomb_wknd_start = { hour: 9, minute: 0 }
+export const branscomb_wknd_end = { hour: 23, minute: 59 }
+
+// COMMONS MUNCHIE
+// weekday (no lunch)
+export const mCommons_wday_breakfast_start = { hour: 7, minute: 30 }
+export const mCommons_wday_breakfast_end = { hour: 10, minute: 0 }
+export const mCommons_wday_dinner_start = { hour: 18, minute: 0 }
+export const mCommons_wday_dinner_end = { hour: 23, minute: 0 }
+// weekend
+export const mCommons_wknd_dinner_start = { hour: 18, minute: 0 }
+export const mCommons_wknd_dinner_end = { hour: 23, minute: 0 }
+
+// HIGHLAND MUNCHIE
+export const highland_wday_start = { hour: 7, minute: 0 }
+export const highland_wday__end = { hour: 23, minute: 59 }
+export const highland_wknd_start = { hour: 9, minute: 0 }
+export const highland_wknd_end = { hour: 23, minute: 59 }
+
+// KISSAM MUNCHIE
+export const mKissam_wday_start = { hour: 7, minute: 0 }
+export const mKissam_wday__end = { hour: 23, minute: 59 }
+export const mKissam_wknd_start = { hour: 9, minute: 0 }
+export const mKissam_wknd_end = { hour: 23, minute: 59 }
+
+// RAND MUNCHIE
+export const mRand_wday_start = { hour: 8, minute: 0 }
+export const mRand_wday_end = { hour: 16, minute: 0 }
