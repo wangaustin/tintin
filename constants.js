@@ -1,6 +1,10 @@
 // const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 export const TIMEZONE = 'America/Chicago'
 
+/**********************************/
+/************* DINING *************/
+/**********************************/
+
 // 2301
 // weekday
 export const _2301_wday_breakfast_start = { hour: 7, minute: 30 }
@@ -100,3 +104,10 @@ export const holysmokes_wday_lunch_end = { hour: 13, minute: 30 }
 export const holysmokes_wday_dinner_start = { hour: 17, minute: 0 }
 export const holysmokes_wday_dinner_end = { hour: 19, minute: 30 }
 
+// SUZIE'S - BLAIR
+export const blair_wday_start = { hour: 11, minute: 0 }
+export const blair_wday_end = { hour: 16, minute: 0 }
+
+// SUZIE'S - FEAHTERINGILL
+export const fgh_wday_start = { hour: 11, minute: 0 }
+export const fgh_wday_end = { hour: 16, minute: 0 }

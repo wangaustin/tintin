@@ -48,7 +48,7 @@ async function slackWebhookHandler(request) {
         return new Response(dininghall.rand(now))
       case 'ZEPPOS':
         return new Response(dininghall.zeppos(now))
-      // cafes TO BE IMPLEMENTED
+      // cafes
       case 'ALUMNI':
         return new Response(cafe.alumni(now))
       case 'GRINS':
@@ -57,6 +57,10 @@ async function slackWebhookHandler(request) {
         return new Response(cafe.holysmokes(now))
       case 'LOCALJAVA':
         return new Response(cafe.localjava(now))
+      case 'BLAIR':
+        return new Response(cafe.blair(now))
+      case 'FGH':
+        return new Response(cafe.fgh(now))
     }
 
     return new Response("Not a valid Dining Hall symbol!")

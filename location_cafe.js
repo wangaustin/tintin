@@ -10,7 +10,6 @@ export function alumni(now) {
     // breakfast & lunch
     let wday_start1 = CONST.alumni_wday_start
     let wday_end1 = CONST.alumni_wday_end
-    let diff = 0 // to be filled if weekend
     let next1
     let isOpen = false
 
@@ -30,15 +29,13 @@ export function alumni(now) {
             now = null
             isOpen = true
         }
-        return HELPER.buildResponse(cafe, isOpen, next1, now)
     }
     else if (whatDay == 6) { // saturday
-        diff = 2
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
     } else { // sunday
-        diff = 1
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
     }
-    next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: diff })
-    return HELPER.buildResponse(cafe, false, next1, now)
+    return HELPER.buildResponse(cafe, isOpen, next1, now)
 }
 
 
@@ -58,7 +55,6 @@ export function grins(now) {
     let start2 = HELPER.createDateTime(now, wday_start2, timezone)
     let end2 = HELPER.createDateTime(now, wday_end2, timezone)
 
-    let diff // to be filled if weekend
     let next1
     let isOpen = false
 
@@ -86,15 +82,17 @@ export function grins(now) {
             next1 = start2
         } else if (now > end2 && now < next1) { // wait for next day
             next1 = next1
+        } else {
+            next1 = null
+            now = null
+            isOpen = true
         }
         return HELPER.buildResponse(cafe, isOpen, next1, now)
     } else if (whatDay == 6) { // saturday
-        diff = 2
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
     } else { // sunday
-        diff = 1
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
     }
-
-    next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: diff })
     return HELPER.buildResponse(cafe, false, next1, now)
 }
 
@@ -159,3 +157,74 @@ export function localjava(now) {
 }
 
 // SUZIE'S - BLAIR OPEN?
+export function blair(now) {
+    let cafe = "Suzie's (Blair)"
+    let timezone = CONST.TIMEZONE
+    let whatDay = now.weekday
+    // breakfast & lunch
+    let wday_start1 = CONST.blair_wday_start
+    let wday_end1 = CONST.blair_wday_end
+    let next1
+    let isOpen = false
+
+    let start1 = HELPER.createDateTime(now, wday_start1, timezone)
+    let end1 = HELPER.createDateTime(now, wday_end1, timezone)
+
+    // monday - friday
+    if (whatDay >= 1 && whatDay <= 5) {
+        let next1 = start1.plus({ days: 1 })
+
+        if (now < start1) { // not yet breakfast
+            next1 = start1
+        } else if (now > end1 && now < next1) { // wait for next day
+            next1 = next1
+        } else { // is open!
+            next1 = null
+            now = null
+            isOpen = true
+        }
+    }
+    else if (whatDay == 6) { // saturday
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
+    } else { // sunday
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    }
+    return HELPER.buildResponse(cafe, isOpen, next1, now)
+}
+
+// SUZIE'S - FGH OPEN?
+export function fgh(now) {
+    let cafe = "Suzie's (Featheringill)"
+    let timezone = CONST.TIMEZONE
+    let whatDay = now.weekday
+    // breakfast & lunch
+    let wday_start1 = CONST.fgh_wday_start
+    let wday_end1 = CONST.fgh_wday_end
+    let next1
+    let isOpen = false
+
+    let start1 = HELPER.createDateTime(now, wday_start1, timezone)
+    let end1 = HELPER.createDateTime(now, wday_end1, timezone)
+
+    // monday - friday
+    if (whatDay >= 1 && whatDay <= 5) {
+        let next1 = start1.plus({ days: 1 })
+
+        if (now < start1) { // not yet breakfast
+            next1 = start1
+        } else if (now > end1 && now < next1) { // wait for next day
+            next1 = next1
+        } else { // is open!
+            next1 = null
+            now = null
+            isOpen = true
+        }
+    }
+    else if (whatDay == 6) { // saturday
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
+    } else { // sunday
+        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    }
+    return HELPER.buildResponse(cafe, isOpen, next1, now)
+
+}
