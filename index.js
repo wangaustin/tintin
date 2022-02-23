@@ -2,6 +2,7 @@
 import { DateTime } from "luxon"
 import * as dininghall from './location_dining.js'
 import * as cafe from './location_cafe.js'
+import * as munchie from './location_munchie.js'
 
 const SLACK_TOKEN = SLACK_TOKEN_AUTH
 const BOT_NAME = "Vandy-Food-Bot"
@@ -61,8 +62,14 @@ async function slackWebhookHandler(request) {
         return new Response(cafe.blair(now))
       case 'FGH':
         return new Response(cafe.fgh(now))
+      case 'MRB':
+        return new Response(cafe.mrb(now))
+      case 'CENTRAL':
+        return new Response(cafe.central(now))
+      // munchies TO BE IMPLEMENTED
     }
 
+    // NOT A VALID INPUT!
     return new Response("Not a valid Dining Hall symbol!")
   }
   // ERROR OCCURRED!!

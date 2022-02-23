@@ -111,3 +111,13 @@ export const blair_wday_end = { hour: 16, minute: 0 }
 // SUZIE'S - FEAHTERINGILL
 export const fgh_wday_start = { hour: 11, minute: 0 }
 export const fgh_wday_end = { hour: 16, minute: 0 }
+
+// SUZIE'S - MRB III
+export const mrb_wday_start = { hour: 7, minute: 0 }
+export const mrb_wday_end = { hour: 16, minute: 30 }
+
+// SUZIE'S - CENTRAL
+export const central_wday_normal_start = { hour: 8, minute: 0 }
+export const central_wday_normal__end = { hour: 20, minute: 30 }
+export const central_wday_friday_start = { hour: 8, minute: 0 }
+export const central_wday_friday_end = { hour: 15, minute: 0 }
