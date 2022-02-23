@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write '**/*.{js,css,json,md}'"
     },
-    "author": "austin",
+    "author": "Austin Wang (austin.wang220@gmail.com)",
     "license": "ISC",
     "devDependencies": {
         "prettier": "^1.17.0"

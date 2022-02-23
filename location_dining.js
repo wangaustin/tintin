@@ -133,7 +133,7 @@ export function commons(now) {
     }
 }
 
-// COMMONS OPEN?
+// EBI OPEN?
 export function ebi(now) {
     let dininghall = 'EBI'
     let timezone = CONST.TIMEZONE
@@ -202,6 +202,113 @@ export function ebi(now) {
         } else {
             return buildResponse(dininghall, true, null, null)
         }
+    }
+}
+
+// KISSAM OPEN?
+export function kissam(now) {
+    let dininghall = 'Kissam'
+    let timezone = CONST.TIMEZONE
+    let whatDay = now.weekday
+    // breakfast
+    let wday_start1 = CONST.kissam_wday_breakfast_start
+    let wday_end1 = CONST.kissam_wday_breakfast_end
+    let wday_start2 = CONST.kissam_wday_lunch_start
+    let wday_end2 = CONST.kissam_wday_lunch_end
+    let wday_start3 = CONST.kissam_wday_dinner_start
+    let wday_end3 = CONST.kissam_wday_dinner_end
+    let wknd_start1 = CONST.kissam_wknd_breakfastlunch_start
+    let wknd_end1 = CONST.kissam_wknd_breakfastlunch_end
+    let wknd_start2 = CONST.kissam_wknd_dinner_start
+    let wknd_end2 = CONST.kissam_wknd_dinner_end
+
+    // monday - friday
+    if (whatDay >= 1 && whatDay <= 5) {
+        let start1 = createDateTime(now, wday_start1, timezone)
+        let end1 = createDateTime(now, wday_end1, timezone)
+        let start2 = createDateTime(now, wday_start2, timezone)
+        let end2 = createDateTime(now, wday_end2, timezone)
+        let start3 = createDateTime(now, wday_start3, timezone)
+        let end3 = createDateTime(now, wday_end3, timezone)
+        let next1 = start1.plus({ days: 1 })
+
+        if (now < start1) {
+            // not yet breakfast
+            return buildResponse(dininghall, false, start1, now)
+        } else if (now > end1 && now < start2) {
+            // not yet lunch
+            return buildResponse(dininghall, false, start2, now)
+        } else if (now > end2 && now < start3) {
+            // not yet dinner
+            return buildResponse(dininghall, false, start3, now)
+        } else if (now > end3 && now < next1) {
+            // wait for next day
+            return buildResponse(dininghall, false, next1, now)
+        } else {
+            // is open!
+            return buildResponse(dininghall, true, null, null)
+        }
+    }
+    // saturday - sunday
+    else {
+        let start1 = createDateTime(now, wknd_start1, timezone)
+        let end1 = createDateTime(now, wknd_end1, timezone)
+        let start2 = createDateTime(now, wknd_start2, timezone)
+        let end2 = createDateTime(now, wknd_end2, timezone)
+        let next1 = start1.plus({ days: 1 })
+        let next2 = createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+
+        if (now < start1) {
+            // not yet breakfast
+            return buildResponse(dininghall, false, start1, now)
+        } else if (now > end1 && now < start2) {
+            // not yet dinner
+            return buildResponse(dininghall, false, start2, now)
+        } else if (now > end2 && now < next1) {
+            if (whatDay == 6) { // if saturday
+                // wait for next day
+                return buildResponse(dininghall, false, next1, now)
+            } else { // if sunday
+                return buildResponse(dininghall, false, next2, now)
+            }
+        } else {
+            return buildResponse(dininghall, true, null, null)
+        }
+    }
+}
+
+// MCTYEIRE OPEN?
+export function mctyeire(now) {
+    let dininghall = 'McTyeire'
+    let timezone = CONST.TIMEZONE
+    let whatDay = now.weekday
+    // breakfast
+    let wday_start1 = CONST.mctyeire_wday_start
+    let wday_end1 = CONST.mctyeire_wday_end
+
+    // monday - thursday
+    if (whatDay >= 1 && whatDay <= 4) {
+        let start1 = createDateTime(now, wday_start1, timezone)
+        let end1 = createDateTime(now, wday_end1, timezone)
+        let next1 = start1.plus({ days: 1 })
+
+        if (now < start1) {
+            // not yet breakfast
+            return buildResponse(dininghall, false, start1, now)
+        } else if (now > end1 && now < next1) {
+            // wait for next day
+            return buildResponse(dininghall, false, next1, now)
+        } else {
+            // is open!
+            return buildResponse(dininghall, true, null, null)
+        }
+    }
+    // friday - sunday
+    else {
+        let wday_start1 = CONST.mctyeire_wday_start
+        let next1 = createDateTime(now, wday_start1, timezone)
+        // let diff = 
+        // COME BACK AND IMPLEMENT AFTER SOME SLEEP
     }
 }
 

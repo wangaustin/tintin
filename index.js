@@ -39,9 +39,13 @@ async function slackWebhookHandler(request) {
         return new Response(bot.commons(now))
       case 'EBI':
         return new Response(bot.ebi(now))
+      case 'KISSAM':
+        return new Response(bot.kissam(now))
+      case 'MCTYEIRE':
+        return new Response(bot.mctyeire(now))
     }
 
-    return new Response("OK!")
+    return new Response("Not a valid Dining Hall symbol!")
   }
   // ERROR OCCURRED!!
   catch (e) {
