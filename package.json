@@ -14,7 +14,6 @@
         "prettier": "^1.17.0"
     },
     "dependencies": {
-        "itty-router": "^2.1.9",
         "luxon": "^2.3.0",
         "serverless-cloudflare-workers": "^1.2.0"
     }
