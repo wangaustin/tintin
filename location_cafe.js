@@ -3,21 +3,26 @@ import * as HELPER from './helpers.js'
 
 // ALUMNI CAFE OPEN?
 export function alumni(now) {
-    let cafe = 'Alumni Cafe'
+    let cafe = "Alumni Cafe"
     let timezone = CONST.TIMEZONE
     let whatDay = now.weekday
     // breakfast & lunch
     let wday_start1 = CONST.alumni_wday_start
     let wday_end1 = CONST.alumni_wday_end
-    let next1
-    let isOpen = false
 
     let start1 = HELPER.createDateTime(now, wday_start1, timezone)
     let end1 = HELPER.createDateTime(now, wday_end1, timezone)
 
+    let next1
+    let isOpen = false
+
     // monday - friday
     if (whatDay >= 1 && whatDay <= 5) {
-        let next1 = start1.plus({ days: 1 })
+        if (whatDay == 5) {
+            next1 = start1.plus({ days: 3 })
+        } else {
+            next1 = start1.plus({ days: 1 })
+        }
 
         if (now < start1) { // not yet breakfast
             next1 = start1
@@ -28,11 +33,10 @@ export function alumni(now) {
             now = null
             isOpen = true
         }
-    }
-    else if (whatDay == 6) { // saturday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
-    } else { // sunday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    } else if (whatDay == 6) {
+        next1 = start1.plus({ days: 2 })
+    } else {
+        next1 = start1.plus({ days: 1 })
     }
     return HELPER.buildResponse(cafe, isOpen, next1, now)
 }
@@ -163,15 +167,20 @@ export function blair(now) {
     // breakfast & lunch
     let wday_start1 = CONST.blair_wday_start
     let wday_end1 = CONST.blair_wday_end
-    let next1
-    let isOpen = false
 
     let start1 = HELPER.createDateTime(now, wday_start1, timezone)
     let end1 = HELPER.createDateTime(now, wday_end1, timezone)
 
+    let next1
+    let isOpen = false
+
     // monday - friday
     if (whatDay >= 1 && whatDay <= 5) {
-        let next1 = start1.plus({ days: 1 })
+        if (whatDay == 5) {
+            next1 = start1.plus({ days: 3 })
+        } else {
+            next1 = start1.plus({ days: 1 })
+        }
 
         if (now < start1) { // not yet breakfast
             next1 = start1
@@ -182,32 +191,36 @@ export function blair(now) {
             now = null
             isOpen = true
         }
-    }
-    else if (whatDay == 6) { // saturday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
-    } else { // sunday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    } else if (whatDay == 6) {
+        next1 = start1.plus({ days: 2 })
+    } else {
+        next1 = start1.plus({ days: 1 })
     }
     return HELPER.buildResponse(cafe, isOpen, next1, now)
 }
 
 // SUZIE'S - FGH OPEN?
 export function fgh(now) {
-    let cafe = "Suzie's (Featheringill)"
+    let cafe = "Suzie's (FGH)"
     let timezone = CONST.TIMEZONE
     let whatDay = now.weekday
     // breakfast & lunch
     let wday_start1 = CONST.fgh_wday_start
     let wday_end1 = CONST.fgh_wday_end
-    let next1
-    let isOpen = false
 
     let start1 = HELPER.createDateTime(now, wday_start1, timezone)
     let end1 = HELPER.createDateTime(now, wday_end1, timezone)
 
+    let next1
+    let isOpen = false
+
     // monday - friday
     if (whatDay >= 1 && whatDay <= 5) {
-        let next1 = start1.plus({ days: 1 })
+        if (whatDay == 5) {
+            next1 = start1.plus({ days: 3 })
+        } else {
+            next1 = start1.plus({ days: 1 })
+        }
 
         if (now < start1) { // not yet breakfast
             next1 = start1
@@ -218,14 +231,12 @@ export function fgh(now) {
             now = null
             isOpen = true
         }
-    }
-    else if (whatDay == 6) { // saturday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
-    } else { // sunday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    } else if (whatDay == 6) {
+        next1 = start1.plus({ days: 2 })
+    } else {
+        next1 = start1.plus({ days: 1 })
     }
     return HELPER.buildResponse(cafe, isOpen, next1, now)
-
 }
 
 // SUZIE'S - MRB III OPEN?
@@ -236,15 +247,20 @@ export function mrb(now) {
     // breakfast & lunch
     let wday_start1 = CONST.mrb_wday_start
     let wday_end1 = CONST.mrb_wday_end
-    let next1
-    let isOpen = false
 
     let start1 = HELPER.createDateTime(now, wday_start1, timezone)
     let end1 = HELPER.createDateTime(now, wday_end1, timezone)
 
+    let next1
+    let isOpen = false
+
     // monday - friday
     if (whatDay >= 1 && whatDay <= 5) {
-        let next1 = start1.plus({ days: 1 })
+        if (whatDay == 5) {
+            next1 = start1.plus({ days: 3 })
+        } else {
+            next1 = start1.plus({ days: 1 })
+        }
 
         if (now < start1) { // not yet breakfast
             next1 = start1
@@ -255,11 +271,10 @@ export function mrb(now) {
             now = null
             isOpen = true
         }
-    }
-    else if (whatDay == 6) { // saturday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 2 })
-    } else { // sunday
-        next1 = HELPER.createDateTime(now, wday_start1, timezone).plus({ days: 1 })
+    } else if (whatDay == 6) {
+        next1 = start1.plus({ days: 2 })
+    } else {
+        next1 = start1.plus({ days: 1 })
     }
     return HELPER.buildResponse(cafe, isOpen, next1, now)
 }

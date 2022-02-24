@@ -1,8 +1,8 @@
 {
-    "name": "food-bot",
+    "name": "tintin",
     "private": true,
     "version": "1.0.0",
-    "description": "package for creating workers templates",
+    "description": "bot for finding whether a vandy dining hall is open",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
